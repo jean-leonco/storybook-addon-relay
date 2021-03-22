@@ -1,0 +1,56 @@
+{
+  "name": "storybook-addon-relay",
+  "version": "0.1.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jean-leonco/storybook-addon-relay"
+  },
+  "license": "MIT",
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "scripts": {
+    "build": "rm -rf dist && tsc -b",
+    "lint": "eslint --fix --ext .js,.ts,.tsx"
+  },
+  "resolutions": {
+    "@types/react-relay": "11.0.0"
+  },
+  "files": [
+    "dist",
+    "register.js"
+  ],
+  "devDependencies": {
+    "@commitlint/cli": "^12.0.1",
+    "@commitlint/config-conventional": "^12.0.1",
+    "@storybook/react": "^6.1.21",
+    "@types/react-relay": "^11.0.0",
+    "@typescript-eslint/eslint-plugin": "^4.18.0",
+    "@typescript-eslint/parser": "^4.18.0",
+    "eslint": "^7.22.0",
+    "eslint-config-prettier": "^8.1.0",
+    "eslint-import-resolver-typescript": "^2.4.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-prettier": "^3.3.1",
+    "eslint-plugin-react": "^7.22.0",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "husky": "4",
+    "lint-staged": "^10.5.4",
+    "prettier": "^2.2.1",
+    "react": "^17.0.1",
+    "react-relay": "^11.0.0",
+    "relay-runtime": "^11.0.0",
+    "typescript": "^4.2.3"
+  },
+  "dependencies": {
+    "@types/relay-test-utils": ">= 6.0.3",
+    "relay-test-utils": ">= 11.0.0"
+  },
+  "peerDependencies": {
+    "graphql": "*",
+    "react": "*",
+    "react-dom": "*",
+    "react-relay": ">= 11.0.0",
+    "relay-runtime": ">= 11.0.0"
+  }
+}

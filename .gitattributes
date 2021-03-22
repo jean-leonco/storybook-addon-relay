@@ -1,0 +1,15 @@
+*                 text=auto
+
+# Source code
+schema.json       linguist-generated
+yarn.lock         merge=binary
+*.json            linguist-language=JSON-with-Comments
+
+# Graphics
+*.gif             binary
+*.ico             binary
+*.jpg             binary
+*.jpeg            binary
+*.png             binary
+*.ttf             binary
+*.woff            binary

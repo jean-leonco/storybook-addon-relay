@@ -1,0 +1,116 @@
+type Query {
+  node(id: ID!): Node
+  nodes(ids: [ID!]!): [Node]!
+  posts(after: String, first: Int, before: String, last: Int): PostConnection!
+  trending(after: String, first: Int, before: String, last: Int): TrendingConnection!
+  viewer: User!
+}
+
+type Mutation {
+  PostCreate(input: PostCreateInput!): PostCreatePayload!
+  PostLike(input: PostLikeInput!): PostLikePayload!
+  PostUnlike(input: PostUnlikeInput!): PostUnlikePayload!
+}
+
+type Subscription {
+  PostNew(input: PostNewInput!): PostNewPayload!
+}
+
+interface Node {
+  id: ID!
+}
+
+type User implements Node {
+  id: ID!
+  name: String!
+  avatarUri: String!
+}
+
+type PageInfo {
+  hasNextPage: Boolean!
+  hasPreviousPage: Boolean!
+  startCursor: String
+  endCursor: String
+}
+
+type PostConnection {
+  pageInfo: PageInfo!
+  edges: [PostEdge!]!
+}
+
+type PostEdge {
+  node: Post!
+  cursor: String!
+}
+
+type Post implements Node {
+  id: ID!
+  author: User!
+  content: String!
+  createdAt: String!
+  commentCount: Int!
+  likeCount: Int!
+  viewerHasLiked: Boolean!
+}
+
+type TrendingConnection {
+  pageInfo: PageInfo!
+  totalCount: Int!
+  edges: [TrendingEdge!]!
+}
+
+type TrendingEdge {
+  node: Trending!
+  cursor: String!
+}
+
+type Trending implements Node {
+  id: ID!
+  topic: String!
+  mentions: Int!
+}
+
+input PostCreateInput {
+  content: String!
+  clientMutationId: String
+}
+
+type PostCreatePayload {
+  postEdge: PostEdge!
+  success: Boolean
+  error: String
+  clientMutationId: String
+}
+
+input PostLikeInput {
+  postId: ID!
+  clientMutationId: String
+}
+
+type PostLikePayload {
+  postEdge: PostEdge!
+  success: Boolean
+  error: String
+  clientMutationId: String
+}
+
+input PostUnlikeInput {
+  postId: ID!
+  clientMutationId: String
+}
+
+type PostUnlikePayload {
+  postEdge: PostEdge!
+  success: Boolean
+  error: String
+  clientMutationId: String
+}
+
+type PostNewPayload {
+  postEdge: PostEdge!
+  clientSubscriptionId: String
+}
+
+input PostNewInput {
+  clientSubscriptionId: String
+}

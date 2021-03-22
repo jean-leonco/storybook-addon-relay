@@ -1,0 +1,45 @@
+{
+  "name": "example",
+  "version": "0.1.0",
+  "license": "MIT",
+  "scripts": {
+    "relay": "relay-compiler",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook",
+    "install:dev": "./install.sh"
+  },
+  "resolutions": {
+    "@types/react-relay": "11.0.0",
+    "react": "0.0.0-experimental-f77c7b9d7",
+    "react-dom": "0.0.0-experimental-f77c7b9d7"
+  },
+  "dependencies": {
+    "date-fns": "^2.19.0",
+    "graphql": "^15.5.0",
+    "react": "0.0.0-experimental-f77c7b9d7",
+    "react-dom": "0.0.0-experimental-f77c7b9d7",
+    "react-relay": "^11.0.0",
+    "relay-runtime": "^11.0.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.13.10",
+    "@storybook/addon-actions": "^6.1.21",
+    "@storybook/addon-essentials": "^6.1.21",
+    "@storybook/addon-links": "^6.1.21",
+    "@storybook/react": "^6.1.21",
+    "@types/faker": "^5.1.7",
+    "@types/react-dom": "^17.0.2",
+    "@types/react-relay": "^11.0.0",
+    "@types/relay-test-utils": "^6.0.3",
+    "babel-loader": "^8.2.2",
+    "babel-plugin-relay": "^11.0.0",
+    "faker": "^5.4.0",
+    "relay-compiler": "^11.0.0",
+    "relay-compiler-language-typescript": "^13.0.6",
+    "relay-config": "^11.0.0",
+    "relay-test-utils": "^11.0.0",
+    "sort-package-json": "^1.49.0",
+    "storybook-addon-relay": "file:../",
+    "typescript": "^4.2.3"
+  }
+}
